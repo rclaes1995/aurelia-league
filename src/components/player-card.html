@@ -1,0 +1,12 @@
+<template>
+  <article class="col-sm-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="label label-default">${player.summonerLevel}</span> ${player.name}
+      </div>
+      <div class="panel-body">
+        <img class="img-responsive" src.bind="'http://ddragon.leagueoflegends.com/cdn/6.13.1/img/profileicon/' + player.profileIconId + '.png'" />
+      </div>
+    </div>
+  </article>
+</template>
