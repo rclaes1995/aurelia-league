@@ -27,12 +27,14 @@ export class Home {
          this.lolService.getLeagueBySummonerId(this.summonerIds)
          .then(data => {
            var i = 0;
-           this.players.map(player => {
-             player.league = (Object.values(data.content)[i][0]);
+           for(var obj in data.content)
+           {
+             this.players[i].league = Object.values(data.content[obj]);
              i++;
-           });
+           }
+
+           console.log(this.players);
          });
-         console.log(this.players);
      });
   }
 

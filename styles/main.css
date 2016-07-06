@@ -1,0 +1,52 @@
+body {
+  background: url('../images/bg.jpg') repeat-y;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+  color: #E5DFCB;
+}
+
+header{
+  padding: 20px 0;
+  min-height: 100px;
+  text-align: center;
+}
+h1{
+  font-size: 40px;
+  color: #9F9B8D;
+  font-family: 'Cinzel', serif;
+}
+
+.panel-default{
+  border-radius: 0px;
+  border-color: #E5DFCB;
+  background-color: #010A13;
+}
+
+.panel-default .panel-heading
+{
+    color: #E5DFCB;
+    background-color: #010A13;
+    border-bottom: 1px solid #182127;
+}
+
+.profile-icon
+{
+  border: 2px solid #182127;
+}
+
+.win-loss-indicator
+{
+  height: 15px;
+  border-radius: 0px;
+  width: 15px;
+  padding-left: 0;
+  padding-right: 0;
+  display: inline-block;
+  border: 0.5px solid transparent;
+}
+
+.label-default.win-loss-indicator
+{
+  background-color: transparent;
+  border: 0.5px solid #E5DFCB;
+}

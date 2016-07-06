@@ -1,11 +1,24 @@
 <template>
-  <article class="col-sm-2">
+  <article class="col-xs-12 col-sm-3 col-md-2">
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <span class="label label-default">${player.summonerLevel}</span> ${player.name}
+      <div class="panel-heading text-center">${player.name}
       </div>
       <div class="panel-body">
-        <img class="img-responsive" src.bind="'http://ddragon.leagueoflegends.com/cdn/6.13.1/img/profileicon/' + player.profileIconId + '.png'" />
+        <img class="img-responsive profile-icon" src.bind="'http://ddragon.leagueoflegends.com/cdn/6.13.1/img/profileicon/' + player.profileIconId + '.png'" />
+        <div if.bind="player.league">
+          <img class="img-responsive" src.bind="'../../images/tiers/' + player.league[0].tier.toLowerCase() + '_' + player.league[0].entries[0].division.toLowerCase() + '.png'" />
+          <div class="text-center">${player.league[0].tier} ${player.league[0].entries[0].division}
+            <br /><sup>${player.league[0].name}</sup>
+            <br /><span if.bind="player.league[0].entries[0].miniSeries">
+                    <span repeat.for="serieGame of player.league[0].entries[0].miniSeries.progress.split('')">
+                      <span if.bind="serieGame == 'W'" class="label label-success win-loss-indicator">&nbsp;</span>
+                      <span if.bind="serieGame == 'L'" class="label label-danger win-loss-indicator">&nbsp;</span>
+                      <span if.bind="serieGame == 'N'" class="label label-default win-loss-indicator">&nbsp;</span>
+                    </span>
+                  </span>
+                  <span if.bind="!player.league[0].entries[0].miniSeries">${player.league[0].entries[0].leaguePoints} LP</span>
+          </div>
+        </div>
       </div>
     </div>
   </article>

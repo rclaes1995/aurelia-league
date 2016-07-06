@@ -1,8 +1,11 @@
 <template>
   <require from='./components/player-card'></require>
 
-  <section>
+  <header>
     <h1>${heading}</h1>
+  </header>
+  
+  <section>
     <player-card repeat.for="p of players" player.bind="p">
     </player-card>
   </section>
