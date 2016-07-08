@@ -3,6 +3,7 @@ import {LolService} from './services/lol-service';
 
 @inject(LolService)
 export class Home {
+  epochDates = new Date().getWeekEpoch();
   heading = 'Infernates Win Loss Tracker';
   summonerIds = [
     '40449448',
@@ -17,6 +18,7 @@ export class Home {
 
   constructor(lolService){
     this.lolService = lolService;
+
   }
 
   activate(){
@@ -32,8 +34,6 @@ export class Home {
              this.players[i].league = Object.values(data.content[obj]);
              i++;
            }
-
-           console.log(this.players);
          });
      });
   }
